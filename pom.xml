@@ -13,7 +13,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.4.0-20220824</app.runtime>
+		<app.runtime>4.4.0</app.runtime>
 		<mule.maven.plugin.version>3.8.0</mule.maven.plugin.version>
 	</properties>
 
@@ -22,6 +22,7 @@
       <plugin>
          <groupId>org.mule.tools.maven</groupId>
          <artifactId>mule-maven-plugin</artifactId>
+         <version>3.0.0</version>
       </plugin>
       <plugin>   
          <groupId>org.mule.tools.maven</groupId>
@@ -29,19 +30,21 @@
          <version>${mule.maven.plugin.version}</version>
          <extensions>true</extensions>
          <configuration>
-            <cloudHubDeployment>
-               <uri>https://anypoint.mulesoft.com/</uri>
-               <muleVersion>${app.runtime}</muleVersion>
-               <username>BA_mulesoft</username>
-               <password>Bluealtair1</password>
-               <applicationName>${project.artifactId}</applicationName>
-               <environment>Sandbox</environment>
-               <workerType>Micro</workerType>
-               <workers>1</workers>
-               <objectStoreV2>true</objectStoreV2>
-               <region>${region}</region>
-            </cloudHubDeployment>
-         </configuration>
+				<cloudHubDeployment>
+					<uri>https://anypoint.mulesoft.com</uri>
+					<server>${server}</server>
+					<muleVersion>${app.runtime}</muleVersion>
+					<muleVersion>${mule.version}</muleVersion>
+					<username>${anypoint.username}</username>
+					<password>${anypoint.password}</password>
+					<applicationName>${app.name}</applicationName>
+					<environment>${environment}</environment>
+					<businessGroup>${business}</businessGroup>
+					<workers>${worker}</workers>
+					<workerType>${workerType}</workerType>
+					<objectStoreV2>true</objectStoreV2>
+				</cloudHubDeployment>
+			</configuration>
       </plugin>
    </plugins>
 </build>
