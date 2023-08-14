@@ -14,40 +14,36 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.4.0</app.runtime>
-		<mule.maven.plugin.version>3.8.1</mule.maven.plugin.version>
+		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
 	</properties>
 
 	<build>
-   <plugins>
-      <plugin>
-         <groupId>org.mule.tools.maven</groupId>
-         <artifactId>mule-maven-plugin</artifactId>
-         <version>3.0.0</version>
-      </plugin>
-      <plugin>   
-         <groupId>org.mule.tools.maven</groupId>
-         <artifactId>mule-maven-plugin</artifactId>
-         <version>${mule.maven.plugin.version}</version>
-         <extensions>true</extensions>
-         <configuration>
-				<cloudHubDeployment>
-					<uri>https://anypoint.mulesoft.com</uri>
-					<server>${server}</server>
-					<muleVersion>${app.runtime}</muleVersion>
-					<muleVersion>${mule.version}</muleVersion>
-					<username>${anypoint.username}</username>
-					<password>${anypoint.password}</password>
-					<applicationName>${app.name}</applicationName>
-					<environment>${environment}</environment>
-					<businessGroup>${business}</businessGroup>
-					<workers>${worker}</workers>
-					<workerType>${workerType}</workerType>
-					<objectStoreV2>true</objectStoreV2>
-				</cloudHubDeployment>
-			</configuration>
-      </plugin>
-   </plugins>
-</build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+  				<cloudHubDeployment>
+  				<uri>https://anypoint.mulesoft.com</uri>
+  				<server>${server}</server>
+  				<muleVersion>${app.runtime}</muleVersion>
+  				<applicationName>${app.name}</applicationName>
+  				<workers>${worker}</workers>
+  				<workerType>${workerType}</workerType>
+  				<environment>${environment}</environment>
+  				<objectStoreV2>true</objectStoreV2>
+  				</cloudHubDeployment>
+  				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<dependencies>
 		<dependency>
@@ -66,9 +62,9 @@
 
 	<repositories>
 		<repository>
-			<id>anypoint-exchange-v3</id>
+			<id>anypoint-exchange-v2</id>
 			<name>Anypoint Exchange</name>
-			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
+			<url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
 			<layout>default</layout>
 		</repository>
 		<repository>
