@@ -1,9 +1,0 @@
-<settings>
-	<servers>
-		<server>
-			<id>Anypoint</id>
-			<username>BA_Mulesoft</username>
-			<password>ba23mulesoft</password>
-		</server>
-	</servers>
-</settings>
