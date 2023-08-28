@@ -16,7 +16,8 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 output application/json
 ---
 {
-	"response" : "Response from cicd pipeline deployed in azure and github."
+	"success" : "true",
+	"msg" : "pipeline deployed using azure cicd pipeline."
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
